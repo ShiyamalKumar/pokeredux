@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { selectPokemon } from '../features/pokemonSlice';
+import { selectPokemon } from '../store/slice/pokemonSlice';
 import { useNavigate } from 'react-router-dom';
 
 const PokemonCard = ({ pokemon }) => {

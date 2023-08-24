@@ -24,6 +24,8 @@ export const { selectPokemon, setPokemonDetailsList } = pokemonSlice.actions;
 export const fetchPokemonList = () => async (dispatch) => {
   try {
     const response = await axios.get('https://pokeapi.co/api/v2/pokemon/');
+
+
     dispatch(fetchPokemonDetailsList(response.data.results));
 
   } catch (error) {
@@ -44,7 +46,6 @@ const fetchPokemonDetailsList = (pokemonList = []) => async (dispatch) => {
 
     Promise.all(pokemonDetailsList).then(values => {
       console.log(values);
-      
       dispatch(setPokemonDetailsList(values));
     })
 
